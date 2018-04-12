@@ -55,7 +55,7 @@
 // **************************************************************************************************************************
 //
 //
-// Assumptions: Class is intended to aid application programmers in designing a guessing game, targeted at elementary students,
+// Anticipated Use: Class is intended to aid application programmers in designing a guessing game, targeted at elementary students,
 // to support "decoding".  Class is not designed for robust exception handling. It is the responsibility of the application programmer
 // to ensure all dependencies and function arguments are in line with documentation. Program is highly modularized and does not support
 // formatting of statistics, rather, class provides a returned value for an individual statistic through its respective function call. 
@@ -107,8 +107,17 @@ namespace p1
         public EncryptWord(string plainText)
         {
             //***set default values for variables***
+            guessCount = 0;
+            avgGuess = 0;
+            totalGuess = 0;
+            highGuessCount = 0;
+            lowGuessCount = 0;
+            totalGuess = 0;
+            shift = 0;
+            encrypted = "";
+            this.plainText = plainText;
 
-            //set shift value
+            //set random shift value
             setShift();
 
             //encrypt plainText
